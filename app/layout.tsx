@@ -15,7 +15,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Milho News",
-  description: "Fique por dentro da bolha deve",
+  description: "Fique por dentro da bolha dev",
 };
 
 export default function RootLayout({

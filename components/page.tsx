@@ -33,19 +33,19 @@ function NewsPost({ author, record, replyCount, repostCount, likeCount }: NewsPo
   return (
     <Card className="mb-6 hover:bg-amber-50 transition-colors duration-200 border-amber-200">
       <CardContent className="pt-4">
-        <div className="flex items-start space-x-4">
-          <Avatar>
+        <div className="flex flex-col md:flex-row items-start space-x-0 md:space-x-4">
+          <Avatar className="mb-2 md:mb-0">
             <AvatarImage src={author.avatar} />
             <AvatarFallback>{author.displayName[0]}</AvatarFallback>
           </Avatar>
           <div className="flex-1">
-            <div className="flex items-center space-x-2">
+            <div className="flex flex-col md:flex-row items-start md:items-center space-y-1 md:space-y-0 md:space-x-2">
               <span className="font-bold text-amber-800">{author.displayName}</span>
               <span className="text-gray-500">@{author.handle}</span>
               <span className="text-gray-500">·</span>
               <span className="text-gray-500">{new Date(record.createdAt).toLocaleString()}</span>
             </div>
-            <p className="mt-2 text-gray-700">{record.text}</p>
+            <p className="mt-2 text-gray-700 text-sm md:text-base">{record.text}</p>
             <div className="flex justify-between mt-4 text-gray-500">
               <Button variant="ghost" size="sm" className="flex items-center space-x-2 hover:text-amber-600">
                 <MessageCircle size={18} />
@@ -64,7 +64,7 @@ function NewsPost({ author, record, replyCount, repostCount, likeCount }: NewsPo
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
 
 function NewsPostSkeleton() {
